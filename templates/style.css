@@ -26,3 +26,51 @@ body {
   text-align: center;
   margin: 0;
 }
+
+.header:hover {
+  background-color: #211f21;
+}
+
+.chat-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+#user-input {
+  background-color: #211f21;
+  flex-grow: 1;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#submitBtn {
+  background-color: #010529;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submitBtn:hover {
+  background-color: yellowgreen;
+  border: 2px solid black;
+}
+
+#result {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #211f21;
+  min-height: 100px;
+  overflow-wrap: break-word;
+  margin: 0 20px 20px;
+  color: white;
+}
