@@ -22,3 +22,18 @@ def response(chat, message):
     }
     result = chat.send_message(message, **parameters)
     return result.text
+
+def run_chat():
+    chat_model = create_session()
+    print(f"Chat Session created")
+    
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() in ['exit', 'quit']:
+            break
+        
+        content = response(chat_model, user_input)
+        print(f"AI: {content}")
+
+if __name__ == '__main__':
+    run_chat()
