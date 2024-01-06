@@ -26,3 +26,23 @@ def response(chat, message):
     }
     result = chat.send_message(message, **parameters)
     return result.text
+
+        @app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/palm2', methods=['GET', 'POST'])
+def vertex_palm():
+    user_input = ""
+    if request.method == 'GET':
+        user_input = request.args.get('user_input')
+    else:
+        user_input = request.form['user_input']
+
+        print(f"Received user input: {user_input}")
+    chat_model = create_session()
+    content = response(chat_model,user_input)
+    return jsonify(content=content)
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8080, host='0.0.0.0')
